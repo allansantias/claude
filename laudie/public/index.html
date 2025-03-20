@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari Adventures Kenya</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      flex-wrap: wrap;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo img {
+      max-width: 60px;
+      height: auto;
+    }
+    
+    .logo h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo a:hover {
+      color: #3498db;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    
+    .nav-links a:hover {
+      color: #3498db;
+    }
+    
+    .client-portal {
+      background-color: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      white-space: nowrap;
+      margin: 10px 0;
+    }
+    
+    .client-portal:hover {
+      background-color: #2980b9;
+    }
+    
+    .directions-button {
+      display: block;
+      margin: 10px auto;
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .directions-button h2 {
+      font-size: 1rem;
+    }
+    
+    .directions-button:hover {
+      background-color: #219653;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 600px;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 30px;
+      z-index: 1;
+    }
+    
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100px;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3498db;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+    }
+    
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      margin: 5px 0;
+    }
+    
+    .btn-primary {
+      background-color: #3498db;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #2980b9;
+    }
+    
+    .btn-secondary {
+      background-color: white;
+      color: #333;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #f1f1f1;
+    }
+    
+    /* Properties Section */
+    .section {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .section-title p {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+    }
+    
+    .property-filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-button {
+      padding: 8px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: white;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 5px;
+    }
+    
+    .filter-button:hover {
+      background-color: #f1f1f1;
+    }
+    
+    .filter-button.active {
+      background-color: #3498db;
+      color: white;
+      border-color: #3498db;
+    }
+    
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .property-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .property-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .property-image {
+      position: relative;
+      height: 200px;
+    }
+    
+    .property-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .property-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #e74c3c;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .property-content {
+      padding: 20px;
+    }
+    
+    .property-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .property-location {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .property-features {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    
+    .property-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .property-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f1f1f1;
+      padding-top: 15px;
+    }
+    
+    .view-details {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .view-details:hover {
+      color: #2980b9;
+    }
+    
+    .property-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .action-button {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f1f1;
+      color: #555;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .action-button:hover {
+      background-color: #3498db;
+      color: white;
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+      background-color: #fff;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+    
+    .close:hover {
+      color: #333;
+    }
+    
+    /* Table Styles */
+    .table-container {
+      overflow-x: auto;
+    }
+    
+    .classy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    .classy-table th, .classy-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .classy-table th {
+      background-color: #f8f9fa;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .classy-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    
+    /* Gallery Styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* FAQ Styles */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .faq-item {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    
+    .faq-item p {
+      margin-bottom: 10px;
+    }
+    
+    /* Review Form Styles */
+    .review-form {
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .submit-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+    
+    /* Footer Styles */
+    .footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #3498db;
+    }
+    
+    .contact-list, .offices-list {
+      list-style: none;
+    }
+    
+    .contact-list li, .offices-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 15px;
+      word-break: break-word;
+    }
+    
+    .social-media {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .social-media a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #34495e;
+      color: white;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    
+    .social-media a:hover {
+      background-color: #3498db;
+    }
+    
+    .whatsapp-button a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .whatsapp-button a:hover {
+      background-color: #128C7E;
+    }
+    
+    .whatsapp-button img {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #34495e;
+    }
+    
+    /* Client Portal Styles */
+    .client-portal-modal {
+      display: none;
+      position: fixed;
+      z-index: 1002;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .client-portal-content {
+      background-color: #fff;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .client-portal-header {
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 15px;
+    }
+    
+    .client-portal-header h2 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    
+    .client-portal-header p {
+      color: #7f8c8d;
+    }
+    
+    .portal-tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+    
+    .portal-tab {
+      padding: 10px 15px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    
+    .portal-tab.active {
+      border-bottom: 2px solid #3498db;
+      color: #3498db;
+      font-weight: 500;
+    }
+    
+    .portal-form-container {
+      margin-bottom: 20px;
+    }
+    
+    .portal-form {
+      display: none;
+    }
+    
+    .portal-form.active {
+      display: block;
+    }
+    
+    .portal-option {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 25px 0;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .portal-option:hover {
+      background-color: #edf2f7;
+      transform: translateY(-2px);
+    }
+    
+    .portal-option-icon {
+      font-size: 1.8rem;
+      color: #3498db;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e3f2fd;
+      border-radius: 50%;
+    }
+    
+    .portal-option-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    
+    .portal-option-content p {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+    
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+    
+    .forgot-password {
+      text-align: right;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    
+    .forgot-password a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    
+    .register-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .register-link a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .dashboard-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+    
+    .dashboard-feature {
+      text-align: center;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    
+    .dashboard-feature:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .dashboard-feature i {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 10px;
+    }
+    
+    .dashboard-feature h4 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    
+    .dashboard-feature p {
+      font-size: 0.8rem;
+      color: #7f8c8d;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .nav-links a {
+        padding: 5px;
+      }
+      
+      .logo {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+      }
+      
+      .logo h1 {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .property-features {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .modal-content {
+        margin: 15px auto;
+        padding: 15px;
+      }
+      
+      .directions-button h2 {
+        font-size: 0.9rem;
+      }
+      
+      .hero-section {
+        height: auto;
+        min-height: 450px;
+      }
+      
+      .client-portal-content {
+        margin: 30px auto;
+        padding: 20px;
+      }
+      
+      .portal-tabs {
+        flex-direction: column;
+        border-bottom: none;
+      }
+      
+      .portal-tab {
+        border-bottom: 1px solid #ddd;
+      }
+      
+      .dashboard-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#home">
+            <img src="379cec12e0a55e62953cf36069c5e0ec.jpg" alt="Safari Adventures Kenya Logo">
+            <h1>SAFARI ADVENTURES KENYA</h1>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#" id="gallery-link">Gallery</a>
+          <a href="#" id="reviews-link">Testimonials</a>
+          <a href="#contact">Contact</a>
+          <a href="#" id="about-link">WHY US?</a>
+          <a href="#" id="faq-link">FAQ</a>
+          <a href="#" id="table-link">Available Tours</a>
+        </div>
+        <a href="#" class="client-portal" id="client-portal-btn">Customer Portal</a>
+      </div>
+    </div>
+    <a href="https://www.google.com/maps/dir//,+Nairobi" target="_blank" class="directions-button">
+      <h2>Directions to our Nairobi Office</h2>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero-section" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h2>Discover Kenya's Breathtaking Wildlife</h2>
+        <p>Trusted safari experts with over 20 years of experience. We provide unforgettable adventures and flexible package options.</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Tours Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+        
+        <div class="hero-cta">
+          <a href="#" id="view-properties-link" class="btn-primary">View Safari Packages <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-secondary">Schedule Call <i class="fas fa-calendar"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tours Section -->
+    <section class="section" id="properties">
+      <div class="container">
+        <div class="section-title">
+          <h2>Available Safari Packages</h2>
+          <p>Discover carefully curated safari experiences in Kenya's most magnificent parks and reserves.</p>
+        </div>
+        
+        <div class="property-filters">
+          <button class="filter-button active">All Destinations</button>
+          <button class="filter-button">Maasai Mara</button>
+          <button class="filter-button">Amboseli</button>
+          <button class="filter-button">Tsavo</button>
+          <button class="filter-button">Lake Nakuru</button>
+        </div>
+      
+        <div class="properties-grid">
+          <!-- Safari Package 1 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img src="2316060a53ca8d6368916740fdb7359d.jpg" alt="Maasai Mara Safari">
+              <div class="property-badge">PREMIUM</div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">Maasai Mara Big Five Safari - 4 Days</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Maasai Mara National Reserve</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-utensils"></i>
+                  <span>Full Board</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-car"></i>
+                  <span>4x4 Transport</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-hotel"></i>
+                  <span>Luxury Accommodation</span>
+                </div>
+              </div>
+              <div class="property-price">USD 1,250 per person</div>
+              <div class="property-footer">
+                <a href="#" class="view-details">View Details</a>
+                <div class="property-actions">
+                  <div class="action-button">
+                    <i class="far fa-heart"></i>
+                  </div>
+                  <div class="action-button">
+                    <i class="fas fa-share-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Safari Package 2 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img src="b7240c03af44ebb4218ba313bd164e31.jpg" alt="Amboseli Safari">
+              <div class="property-badge">FEATURED</div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">Amboseli Kilimanjaro View Safari - 3 Days</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Amboseli National Park</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-utensils"></i>
+                  <span>Full Board</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-car"></i>
+                  <span>4x4 Transport</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-camera"></i>
+                  <span>Photography Guide</span>
+                </div>
+              </div>
+              <div class="property-price">USD 950 per person</div>
+              <div class="property-footer">
+                <a href="#" class="view-details">View Details</a>
+                <div class="property-actions">
+                  <div class="action-button">
+                    <i class="far fa-heart"></i>
+                  </div>
+                  <div class="action-button">
+                    <i class="fas fa-share-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Safari Package 3 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img src="fd8c3fa4898e51de16d210750c86b8b2.jpg" alt="Tsavo Safari">
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">Tsavo East & West Safari - 5 Days</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tsavo National Parks</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-utensils"></i>
+                  <span>Full Board</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-campground"></i>
+                  <span>Luxury Tented Camp</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-hiking"></i>
+                  <span>Nature Walk</span>
+                </div>
+              </div>
+              <div class="property-price">USD 1,450 per person</div>
+              <div class="property-footer">
+                <a href="#" class="view-details">View Details</a>
+                <div class="property-actions">
+                  <div class="action-button">
+                    <i class="far fa-heart"></i>
+                  </div>
+                  <div class="action-button">
+                    <i class="fas fa-share-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Safari Package 4 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img src="8d12299a063bf552122c4c0f0a1bd024.jpg" alt="Lake Nakuru Safari">
+              <div class="property-badge">HOT DEAL</div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">Lake Nakuru Flamingo Safari - 2 Days</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Lake Nakuru National Park</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-utensils"></i>
+                  <span>Full Board</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-car"></i>
+                  <span>Safari Van</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-binoculars"></i>
+                  <span>Bird Watching</span>
+                </div>
+              </div>
+              <div class="property-price">USD 680 per person</div>
+              <div class="property-footer">
+                <a href="#" class="view-details">View Details</a>
+                <div class="property-actions">
+                  <div class="action-button">
+                    <i class="far fa-heart"></i>
+                  </div>
+                  <div class="action-button">
+                    <i class="fas fa-share-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="#" class="btn-primary">View All Safari Packages <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with our team of safari experts.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px;">
+          <div>
+            <h3 style="margin-bottom: 20px; color: #2c3e50;">Send Us a Message</h3>
+            <form>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Your email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Your phone number">
+              </div>
+              <div class="form-group">
+                <label for="interest">I'm Interested In</label>
+                <select id="interest">
+                  <option>Maasai Mara Safaris</option>
+                  <option>Amboseli Safaris</option>
+                  <option>Tsavo Safaris</option>
+                  <option>Lake Nakuru Safaris</option>
+                  <option>Custom Safari Packages</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" rows="5" placeholder="Tell us more about your safari preferences..."></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+          
+          <div>
+            <h3 style="margin-bottom: 20px; color: #2c3e50;">Our Offices</h3>
+            <div style="margin-bottom: 30px;">
+              <h4 style="margin-bottom: 10px; color: #3498db;">Nairobi Main Office</h4>
+              <p><i class="fas fa-map-marker-alt"></i> Karen, Nairobi</p>
+              <p><i class="fas fa-phone"></i> +254 721 235998 - Lucy</p>
+              <p><i class="fas fa-envelope"></i> info@safariadventureskenya.com</p>
+              <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM, Sat: 9:00 AM - 1:00 PM</p>
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+              <h4 style="margin-bottom: 10px; color: #3498db;">Mombasa Office</h4>
+              <p><i class="fas fa-map-marker-alt"></i> Nyali, Mombasa</p>
+              <p><i class="fas fa-phone"></i> +254 731 238 628 - David</p>
+              <p><i class="fas fa-clock"></i> Mon-Fri: 8:30 AM - 4:30 PM</p>
+            </div>
+            
+            <div class="whatsapp-button">
+              <a href="https://wa.me/+254721235998" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Safari Adventures Kenya is a trusted name in Kenya's tourism industry with over 20 years of experience in safari tours, wildlife expeditions, and adventure travel.</p>
+          <ul class="social-media">
+            <li><a href="#https://www.facebook.com/SafariAdventuresKenya"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul class="contact-list">
+            <li>
+              <i class="fas fa-phone"></i>
+              <div>
+                <p>+254 721 235998 - Lucy</p>
+                <p>+254 722 424 941 - James</p>
+                <p>+254 731 238 628 - David</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div>
+                <p>info@safariadventureskenya.com</p>
+                <p>bookings@safariadventureskenya.com</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Our Offices</h3>
+          <ul class="offices-list">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Karen, Nairobi - Ngong Road</p>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Nyali, Mombasa - Beach Road</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Safari Adventures Kenya. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Modal for Safari Details -->
+  <div id="property-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Safari Package Details</h2>
+      <div class="gallery">
+        <img src="masai_mara1.jpg" alt="Safari View 1">
+        <img src="masai_mara2.jpg" alt="Safari View 2">
+        <img src="masai_mara3.jpg" alt="Safari View 3">
+        <img src="masai_mara4.jpg" alt="Safari View 4">
+      </div>
+      <h3>Maasai Mara Big Five Safari - 4 Days</h3>
+      <p><strong>Location:</strong> Maasai Mara National Reserve</p>
+      <p><strong>Price:</strong> USD 1,250 per person</p>
+      <p><strong>Duration:</strong> 4 Days / 3 Nights</p>
+      <h4>Description</h4>
+      <p>Experience the magic of Kenya's most famous wildlife reserve with our premium 4-day safari package. Witness the incredible Big Five (lion, leopard, elephant, rhino, and buffalo) in their natural habitat. Our expert guides will take you to the best game viewing locations at optimal times for wildlife sightings.</p>
+      <h4>Features & Amenities</h4>
+      <ul>
+        <li>Luxury tented accommodation</li>
+        <li>Full board meals (breakfast, lunch, and dinner)</li>
+        <li>4x4 Land Cruiser with pop-up roof</li>
+        <li>Professional English-speaking safari guide</li>
+        <li>Daily game drives (morning and evening)</li>
+        <li>Maasai village cultural visit</li>
+        <li>Park entry fees included</li>
+      </ul>
+      <h4>Payment Options</h4>
+      <p>We offer flexible payment plans:</p>
+      <ul>
+        <li>Full payment: USD 1,250 per person</li>
+        <li>Deposit of 50% (USD 625) and balance 30 days before departure</li>
+        <li>Installment plan: USD 400 deposit and 3 monthly installments of USD 283 each</li>
+      </ul>
+      <button class="submit-btn">Book This Safari</button>
+    </div>
+  </div>
+  
+  <!-- Modal for Available Tours Table -->
+  <div id="table-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Available Safari Packages</h2>
+      <div class="table-container">
+        <table class="classy-table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Duration</th>
+              <th>Price (USD)</th>
+              <th>Features</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Maasai Mara</td>
+              <td>4 Days / 3 Nights</td>
+              <td>1,250</td>
+              <td>Big Five, Luxury Camp, 4x4 Vehicle</td>
+              <td>Year Round</td>
+            </tr>
+            <tr>
+              <td>Amboseli</td>
+              <td>3 Days / 2 Nights</td>
+              <td>950</td>
+              <td>Kilimanjaro View, Elephants, Full Board</td>
+              <td>Year Round</td>
+            </tr>
+            <tr>
+              <td>Tsavo East & West</td>
+              <td>5 Days / 4 Nights</td>
+              <td>1,450</td>
+              <td>Red Elephants, Nature Walk, Luxury Tents</td>
+              <td>Year Round</td>
+            </tr>
+            <tr>
+              <td>Lake Nakuru</td>
+              <td>2 Days / 1 Night</td>
+              <td>680</td>
+              <td>Flamingos, Rhinos, Bird Watching</td>
+              <td>Year Round</td>
+            </tr>
+            <tr>
+              <td>Samburu</td>
+              <td>4 Days / 3 Nights</td>
+              <td>1,200</td>
+              <td>Unique Species, Cultural Visit, Full Board</td>
+              <td>Year Round</td>
+            </tr>
+            <tr>
+              <td>Nairobi Park</td>
+              <td>1 Day</td>
+              <td>180</td>
+              <td>City Views, Lion Tracking, Lunch Included</td>
+              <td>Daily Departures</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for FAQ -->
+  <div id="faq-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <h3>What should I pack for a safari?</h3>
+          <p>We recommend lightweight, neutral-colored clothing, a sun hat, sunglasses, sunscreen, insect repellent, comfortable walking shoes, a light jacket or sweater for evenings, camera equipment, and personal medications. A detailed packing list will be provided upon booking.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are there any hidden costs?</h3>
+          <p>No. Our safari packages include all costs mentioned in the itinerary. Additional costs may include gratuities, alcoholic beverages, travel insurance, and personal purchases during your trip.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Kenya safe for tourists?</h3>
+          <p>Kenya is generally safe for tourists, especially in established safari destinations. Our guides are experienced professionals who prioritize your safety. We recommend following standard travel precautions and adhering to the guidance of your safari guide.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When is the best time to visit Kenya for safari?</h3>
+          <p>The dry seasons (January-February and June-October) offer the best wildlife viewing as animals gather around water sources. The Great Migration in Maasai Mara typically occurs between July and October. However, Kenya is a year-round destination with each season offering unique experiences.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What payment methods do you accept?</h3>
+          <p>We accept credit cards, bank transfers, and PayPal. For security reasons, we do not accept cash payments for package bookings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Gallery -->
+  <div id="gallery-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Safari Gallery</h2>
+      <div class="gallery">
+        <img src="1ad76eed0393fdeb89c9d1782c3effe2.jpg" alt="Safari View 1">
+        <img src="8d12299a063bf552122c4c0f0a1bd024.jpg" alt="Safari View 2">
+        <img src="6376d30b28a7de5b51daef4d26d9e431.jpg" alt="Safari View 3">
+        <img src="fd8c3fa4898e51de16d210750c86b8b2.jpg" alt="Safari View 4">
+        <img src="b7240c03af44ebb4218ba313bd164e31.jpg" alt="Safari View 5">
+        <img src="a4121b94101a3204152c52aee08d0d16.jpg" alt="Safari View 6">
+        <img src="2316060a53ca8d6368916740fdb7359d.jpg" alt="Safari View 7">
+        <img src="379cec12e0a55e62953cf36069c5e0ec.jpg" alt="Safari View 8">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Reviews -->
+  <div id="reviews-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Client Testimonials</h2>
+      <div style="margin-bottom: 30px;">
+        <h3>What Our Clients Say</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; border-left: 4px solid #3498db;">
+            <p style="font-style: italic;">"Our family safari to Maasai Mara was truly unforgettable. The guides were knowledgeable, accommodations were luxurious, and we saw all of the Big Five! The sunset views were beyond magical."</p>
+            <p style="margin-top: 15px; font-weight: 600;">- James Smith, USA</p>
+          </div>
+          
+          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; border-left: 4px solid #3498db;">
+            <p style="font-style: italic;">"My photography safari with Safari Adventures Kenya exceeded all expectations. The guides knew exactly where to position us for the best lighting and animal sightings. I came home with incredible shots!"</p>
+            <p style="margin-top: 15px; font-weight: 600;">- Marie Dubois, France</p>
+          </div>
+          
+          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; border-left: 4px solid #3498db;">
+            <p style="font-style: italic;">"As first-time safari goers, we were a bit nervous, but the team took care of everything. The accommodations were perfect, the food was delicious, and we felt safe the entire time. We're already planning our next trip!"</p>
+            <p style="margin-top: 15px; font-weight: 600;">- John and Sarah Williams, Australia</p>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3>Share Your Experience</h3>
+        <form class="review-form">
+          <div class="form-group">
+            <label for="review-name">Your Name</label>
+            <input type="text" id="review-name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="review-location">Your Country</label>
+            <input type="text" id="review-location" placeholder="Country">
+          </div>
+          <div class="form-group">
+            <label for="review-rating">Rating</label>
+            <select id="review-rating">
+              <option>5 Stars - Excellent</option>
+              <option>4 Stars - Very Good</option>
+              <option>3 Stars - Good</option>
+              <option>2 Stars - Fair</option>
+              <option>1 Star - Poor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="review-text">Your Review</label>
+            <textarea id="review-text" rows="5" placeholder="Share your safari experience with us..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for About Us -->
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>WHY Choose Safari Adventures Kenya?</h2>
+      <div>
+        <p>At Safari Adventures Kenya, we understand that a safari is often a once-in-a-lifetime experience. That's why we go above and beyond to ensure your journey through Kenya's wilderness is seamless, authentic, and unforgettable. Here's why you should choose us:</p>
+        <p><strong>1. Expert Local Guides</strong></p>
+        <p>Our guides are born and raised in Kenya with intimate knowledge of the landscape, wildlife, and culture. They are certified professionals with extensive training in wildlife spotting, conservation, and guest safety. Their passion for Kenya's natural heritage shines through in every safari experience.</p>
+        <p><strong>2. All-Inclusive Transparent Pricing</strong></p>
+        <p>When you book with us, the price includes all park fees, accommodations, meals, and transportation. There are no hidden charges or surprise costs. Our pricing is transparent, so you know exactly what you're paying for. This makes your safari planning affordable and stress-free.</p>
+        <p><strong>3. Over 20 Years of Safari Excellence</strong></p>
+        <p>With over two decades in the tourism industry, we have built a solid reputation for reliability and exceptional service. We have successfully guided thousands of clients through Kenya's most spectacular wildlife areas. Our long-standing presence in the industry is a testament to our commitment to excellence and customer satisfaction.</p>
+        <p><strong>4. Quality Accommodations & Vehicles</strong></p>
+        <p>We partner with the finest lodges and tented camps, carefully selected for their comfort, service, and strategic locations for wildlife viewing. Our fleet of 4x4 vehicles is well-maintained, comfortable, and specially modified for optimal game viewing with pop-up roofs and large windows. Every vehicle is equipped with first aid kits, binoculars, and charging stations.</p>
+        <p><strong>5. Flexible Payment Plans</strong></p>
+        <p>We offer flexible payment options to make your safari dream accessible. With reasonable deposits and installment plans, you can secure your booking and plan your perfect African adventure without financial stress.</p>
+        <p><strong>6. Responsible Tourism Practices</strong></p>
+        <p>We are committed to sustainable tourism that benefits local communities and preserves wildlife habitats. A portion of every safari booking goes directly to conservation initiatives and community development projects across Kenya.</p>
+        <p><strong>7. Personalized Safari Experiences</strong></p>
+        <p>We understand that every traveler is unique. Our team works closely with you to customize your safari according to your interests, whether it's photography, bird watching, cultural experiences, or family-friendly activities. Your safari will be tailored to your preferences and pace.</p>
+        <p><strong>8. 24/7 On-Ground Support</strong></p>
+        <p>Our team is available around the clock to assist with any questions or concerns during your stay in Kenya. From airport transfers to special dietary requirements, we take care of every detail so you can focus on enjoying the wildlife experience.</p>
+        <p><strong>Your Journey, Our Passion</strong></p>
+        <p>At Safari Adventures Kenya, we don't just organize safaris—we create memories that last a lifetime.<p>Ready to embark on your African adventure with Kenya's most trusted safari operator?</p>
+      </div>
+    </div>
+    
+    <!-- Client Portal Modal -->
+    <div id="client-portal-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Customer Portal Login</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="client-email">Email Address</label>
+            <input type="email" id="client-email" placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="client-password">Password</label>
+            <input type="password" id="client-password" placeholder="Enter your password">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <input type="checkbox" id="remember-me">
+              <label for="remember-me">Remember me</label>
+            </div>
+            <a href="#" style="color: #3498db; text-decoration: none;">Forgot Password?</a>
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+          <div style="text-align: center; margin-top: 20px;">
+            <p>Don't have an account? <a href="#" style="color: #3498db; text-decoration: none;">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Newsletter Section -->
+    <section class="section" id="newsletter">
+      <div class="container">
+        <div style="background-color: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center;">
+          <h2 style="margin-bottom: 20px; color: #2c3e50;">Subscribe to Our Newsletter</h2>
+          <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Stay updated with our latest safari packages, wildlife sightings, and travel tips for Kenya. 
+            Get exclusive discounts and early access to seasonal promotions.
+          </p>
+          <form style="display: flex; max-width: 600px; margin: 0 auto;">
+            <input type="email" placeholder="Your email address" style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 5px 0 0 5px; border-right: none;">
+            <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 15px 25px; border-radius: 0 5px 5px 0; cursor: pointer; font-weight: 600;">
+              Subscribe <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Safari Planning Guide Modal -->
+    <div id="planning-guide-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Safari Planning Guide</h2>
+        <div class="tabs">
+          <button class="tab-link active" onclick="openTab(event, 'when-to-go')">When to Go</button>
+          <button class="tab-link" onclick="openTab(event, 'what-to-pack')">What to Pack</button>
+          <button class="tab-link" onclick="openTab(event, 'visa-info')">Visa Information</button>
+          <button class="tab-link" onclick="openTab(event, 'health-safety')">Health & Safety</button>
+        </div>
+        
+        <div id="when-to-go" class="tab-content active">
+          <h3>Best Times to Visit Kenya</h3>
+          <div class="season-card">
+            <h4>Dry Season (June to October)</h4>
+            <p><strong>Benefits:</strong> Best wildlife viewing, Great Migration in Maasai Mara (July-October), less rain, easier to spot animals at water sources</p>
+            <p><strong>Considerations:</strong> Peak tourist season, higher prices, advance booking recommended</p>
+          </div>
+          
+          <div class="season-card">
+            <h4>Short Dry Season (January to February)</h4>
+            <p><strong>Benefits:</strong> Good wildlife viewing, fewer tourists than peak season, newborn animals in many parks</p>
+            <p><strong>Considerations:</strong> Can be very hot, particularly in February</p>
+          </div>
+          
+          <div class="season-card">
+            <h4>Rainy Seasons (March to May & November to December)</h4>
+            <p><strong>Benefits:</strong> Lower prices, fewer tourists, lush landscapes, excellent bird watching, clear air for photography</p>
+            <p><strong>Considerations:</strong> Some roads may be impassable, rain can interrupt game drives, some camps close during heavy rains</p>
+          </div>
+          
+          <div class="month-table">
+            <h4>Month-by-Month Safari Guide</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Weather</th>
+                  <th>Wildlife Highlights</th>
+                  <th>Crowd Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>January</td>
+                  <td>Dry, hot</td>
+                  <td>Newborn animals, resident wildlife</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>February</td>
+                  <td>Dry, hot</td>
+                  <td>Predator activity, bird watching</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>March</td>
+                  <td>Start of rains</td>
+                  <td>Lush landscapes, migratory birds</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>April</td>
+                  <td>Heavy rain</td>
+                  <td>Newborn animals, green landscapes</td>
+                  <td>Very low</td>
+                </tr>
+                <tr>
+                  <td>May</td>
+                  <td>Decreasing rain</td>
+                  <td>Wildflowers, fewer tourists</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>June</td>
+                  <td>Start of dry season</td>
+                  <td>Improving wildlife viewing</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>July</td>
+                  <td>Dry, mild</td>
+                  <td>Start of wildebeest migration</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>August</td>
+                  <td>Dry, mild</td>
+                  <td>Peak migration, river crossings</td>
+                  <td>Very high</td>
+                </tr>
+                <tr>
+                  <td>September</td>
+                  <td>Dry, warming</td>
+                  <td>Migration, predator action</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>October</td>
+                  <td>End of dry season</td>
+                  <td>Last migration activities</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>November</td>
+                  <td>Short rains</td>
+                  <td>Migrant birds arriving</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>December</td>
+                  <td>Variable, some rain</td>
+                  <td>Green landscapes, holiday atmosphere</td>
+                  <td>Medium-high</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div id="what-to-pack" class="tab-content">
+          <h3>Safari Packing Essentials</h3>
+          <div class="packing-categories">
+            <div class="packing-category">
+              <h4><i class="fas fa-tshirt"></i> Clothing</h4>
+              <ul>
+                <li>Lightweight, neutral-colored shirts (avoid bright colors)</li>
+                <li>Lightweight pants/convertible pants</li>
+                <li>Safari shorts (not too short)</li>
+                <li>Light jacket or fleece for cool mornings/evenings</li>
+                <li>Rain jacket or poncho (seasonal)</li>
+                <li>Wide-brimmed hat for sun protection</li>
+                <li>Comfortable closed walking shoes</li>
+                <li>Sandals for camp/lodge</li>
+                <li>Swimwear (if your accommodation has a pool)</li>
+                <li>Pajamas (lightweight)</li>
+                <li>Undergarments (enough for your stay)</li>
+                <li>Light scarf (for dust and sun protection)</li>
+              </ul>
+            </div>
+            
+            <div class="packing-category">
+              <h4><i class="fas fa-camera"></i> Photography</h4>
+              <ul>
+                <li>Camera with zoom lens</li>
+                <li>Extra memory cards</li>
+                <li>Extra camera batteries</li>
+                <li>Battery charger</li>
+                <li>Lens cleaning kit</li>
+                <li>Binoculars</li>
+                <li>Camera bag with dust protection</li>
+                <li>Power bank</li>
+              </ul>
+            </div>
+            
+            <div class="packing-category">
+              <h4><i class="fas fa-first-aid"></i> Health & Toiletries</h4>
+              <ul>
+                <li>Sunscreen (SPF 30+ recommended)</li>
+                <li>Insect repellent with DEET</li>
+                <li>Personal medications</li>
+                <li>Basic first aid kit</li>
+                <li>Hand sanitizer</li>
+                <li>Wet wipes</li>
+                <li>Toiletries (shampoo, soap, toothpaste)</li>
+                <li>Lip balm with SPF</li>
+                <li>Eyedrops (for dust)</li>
+              </ul>
+            </div>
+            
+            <div class="packing-category">
+              <h4><i class="fas fa-passport"></i> Documents & Money</h4>
+              <ul>
+                <li>Passport with at least 6 months validity</li>
+                <li>Copy of passport (separate from original)</li>
+                <li>Travel insurance details</li>
+                <li>Visa documentation (if applicable)</li>
+                <li>Cash (USD widely accepted)</li>
+                <li>Credit/debit cards</li>
+                <li>Safari vouchers/confirmations</li>
+                <li>Emergency contact information</li>
+                <li>Yellow fever certificate (if required)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="packing-tips">
+            <h4>Pro Packing Tips</h4>
+            <ul>
+              <li>Pack light and use soft-sided luggage (easier to store in safari vehicles)</li>
+              <li>Many lodges offer same-day laundry service</li>
+              <li>Dress in layers - mornings can be cool, afternoons hot</li>
+              <li>Don't forget a good quality flashlight or headlamp</li>
+              <li>Keep electronics in dust-proof bags when not in use</li>
+              <li>Leave valuable jewelry at home</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div id="visa-info" class="tab-content">
+          <h3>Kenya Visa Information</h3>
+          <div class="visa-section">
+            <h4>E-Visa Application</h4>
+            <p>Most visitors to Kenya require a visa. The easiest way to obtain one is through the official e-visa portal:</p>
+            <a href="http://evisa.go.ke" target="_blank" class="visa-link">Kenya E-Visa Portal <i class="fas fa-external-link-alt"></i></a>
+            
+            <div class="visa-types">
+              <h4>Types of Visas</h4>
+              <div class="visa-type">
+                <h5>Single Entry Visa</h5>
+                <p><strong>Cost:</strong> USD 51</p>
+                <p><strong>Duration:</strong> Up to 3 months</p>
+                <p><strong>Processing Time:</strong> 2-3 business days</p>
+              </div>
+              
+              <div class="visa-type">
+                <h5>Transit Visa</h5>
+                <p><strong>Cost:</strong> USD 21</p>
+                <p><strong>Duration:</strong> Up to 72 hours</p>
+                <p><strong>Processing Time:</strong> 2-3 business days</p>
+              </div>
+              
+              <div class="visa-type">
+                <h5>East Africa Tourist Visa</h5>
+                <p><strong>Cost:</strong> USD 100</p>
+                <p><strong>Duration:</strong> Up to 3 months</p>
+                <p><strong>Coverage:</strong> Kenya, Uganda, Rwanda</p>
+                <p><strong>Processing Time:</strong> 3-5 business days</p>
+              </div>
+            </div>
+            
+            <div class="visa-requirements">
+              <h4>Requirements for E-Visa Application</h4>
+              <ul>
+                <li>Valid passport with at least 6 months validity</li>
+                <li>Recent digital passport-size photo</li>
+                <li>Itinerary/travel plans in Kenya</li>
+                <li>Hotel/accommodation confirmations</li>
+                <li>Return ticket confirmation</li>
+                <li>Credit/debit card for payment</li>
+              </ul>
+            </div>
+            
+            <div class="visa-exempt">
+              <h4>Visa Exempt Countries</h4>
+              <p>Visitors from the following countries do not require a visa to enter Kenya:</p>
+              <p>Bahamas, Barbados, Belize, Botswana, Brunei, Burundi, Cyprus, Dominica, Fiji, Ghana, Grenada, Jamaica, Kiribati, Lesotho, Malawi, Malaysia, Maldives, Mauritius, Namibia, Nauru, Papua New Guinea, Rwanda, Samoa, Seychelles, Sierra Leone, Singapore, South Africa, Swaziland, Tanzania, The Gambia, Tonga, Trinidad & Tobago, Tuvalu, Uganda, Vanuatu, Zambia, Zimbabwe</p>
+            </div>
+            
+            <div class="important-note">
+              <h4>Important Notes</h4>
+              <ul>
+                <li>Apply for your visa at least 7 days before travel</li>
+                <li>Print your e-visa approval letter to present at immigration</li>
+                <li>Safari Adventures Kenya can assist with visa queries</li>
+                <li>Visa requirements may change - always check the official website</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div id="health-safety" class="tab-content">
+          <h3>Health & Safety Information</h3>
+          
+          <div class="health-section">
+            <h4>Recommended Vaccinations</h4>
+            <p>Consult your doctor at least 4-6 weeks before your trip to discuss vaccinations and medications. Generally recommended for Kenya:</p>
+            <ul>
+              <li><strong>Yellow Fever:</strong> Required for entry if arriving from a country with yellow fever risk</li>
+              <li><strong>Hepatitis A & B</strong></li>
+              <li><strong>Typhoid</strong></li>
+              <li><strong>Tetanus-diphtheria</strong></li>
+              <li><strong>Measles-mumps-rubella (MMR)</strong></li>
+              <li><strong>Malaria prophylaxis</strong> - discuss options with your doctor</li>
+            </ul>
+          </div>
+          
+          <div class="health-section">
+            <h4>Malaria Prevention</h4>
+            <p>Kenya is a malaria-risk country. Take these precautions:</p>
+            <ul>
+              <li>Take appropriate anti-malarial medication (consult your doctor)</li>
+              <li>Use insect repellent containing DEET</li>
+              <li>Wear long sleeves and pants in the evening</li>
+              <li>Sleep under a mosquito net or in air-conditioned rooms</li>
+              <li>Use permethrin-treated clothing if possible</li>
+            </ul>
+          </div>
+          
+          <div class="health-section">
+            <h4>Water & Food Safety</h4>
+            <ul>
+              <li>Drink only bottled water (provided on all our safaris)</li>
+              <li>Avoid ice in drinks unless you're sure it's made from purified water</li>
+              <li>Eat thoroughly cooked food served hot</li>
+              <li>Avoid raw vegetables and fruits unless they can be peeled</li>
+              <li>All meals at our partnered lodges/camps follow strict hygiene protocols</li>
+            </ul>
+          </div>
+          
+          <div class="health-section">
+            <h4>Travel Insurance</h4>
+            <p>We strongly recommend comprehensive travel insurance that includes:</p>
+            <ul>
+              <li>Medical coverage and evacuation</li>
+              <li>Trip cancellation/interruption</li>
+              <li>Lost luggage coverage</li>
+              <li>24/7 emergency assistance</li>
+            </ul>
+          </div>
+          
+          <div class="health-section">
+            <h4>Safety During Safari</h4>
+            <ul>
+              <li>Always follow your guide's instructions</li>
+              <li>Never exit the vehicle unless your guide says it's safe</li>
+              <li>Keep noise levels low during game drives</li>
+              <li>Keep arms and legs inside the vehicle at all times</li>
+              <li>Don't approach or attempt to feed wildlife</li>
+              <li>At camps/lodges, follow designated paths and use escort services at night</li>
+              <li>Keep tent/room zipped/locked when not present</li>
+            </ul>
+          </div>
+          
+          <div class="health-section">
+            <h4>Emergency Contacts</h4>
+            <p>Our safari vehicles are equipped with radios and all guides carry mobile phones. In case of emergency:</p>
+            <ul>
+              <li><strong>Safari Adventures Kenya 24/7 Emergency Line:</strong> +254 722 424 941</li>
+              <li><strong>Police Emergency:</strong> 999 or 112</li>
+              <li><strong>Ambulance Services:</strong> +254 20 2715999</li>
+              <li><strong>Tourist Police:</strong> +254 20 2724154</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add JavaScript for functionality -->
+    <script>
+   document.addEventListener('DOMContentLoaded', function() {
+  // Modal functionality
+  const modals = {
+    "table-link": "table-modal",
+    "faq-link": "faq-modal",
+    "gallery-link": "gallery-modal",
+    "reviews-link": "reviews-modal",
+    "about-link": "about-modal",
+    "client-portal-btn": "client-portal-modal"
+  };
+
+  // Set up modal triggers
+  for (const [triggerId, modalId] of Object.entries(modals)) {
+    const trigger = document.getElementById(triggerId);
+    const modal = document.getElementById(modalId);
+
+    if (trigger && modal) {
+      const closeBtn = modal.querySelector('.close');
+
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+      });
+
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  }
+
+  // Property detail modal
+  const viewDetailsButtons = document.querySelectorAll('.view-details');
+  const propertyModal = document.getElementById('property-modal');
+
+  if (propertyModal) {
+    const propertyModalClose = propertyModal.querySelector('.close');
+
+    viewDetailsButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        propertyModal.style.display = 'block';
+      });
+    });
+
+    propertyModalClose.addEventListener('click', function() {
+      propertyModal.style.display = 'none';
+    });
+  }
+
+  // Tab functionality
+  function openTab(evt, tabName) {
+    const tabContents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabContents.length; i++) {
+      tabContents[i].classList.remove("active");
+    }
+
+    const tabLinks = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+
+  // Add safari planning guide link
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) {
+    const planningLink = document.createElement('a');
+    planningLink.href = "#";
+    planningLink.id = "planning-guide-link";
+    planningLink.textContent = "Planning Guide";
+    navLinks.appendChild(planningLink);
+
+    // Set up planning guide modal
+    const planningModal = document.getElementById('planning-guide-modal');
+    if (planningModal) {
+      const planningModalClose = planningModal.querySelector('.close');
+
+      planningLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        planningModal.style.display = 'block';
+      });
+
+      planningModalClose.addEventListener('click', function() {
+        planningModal.style.display = 'none';
+      });
+    }
+  }
+
+  // Filter functionality
+  const filterButtons = document.querySelectorAll('.filter-button');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // In a real implementation, this would filter the properties
+      // For now, just a visual change
+    });
+  });
+});
+      </script>
+      </body>
+        
+      </html>
+      
+  
